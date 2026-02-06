@@ -2,7 +2,7 @@ puts "Enter the first number:"
 first_num_input = gets.chomp
 
 if first_num_input.match?(/^\d+$/)
-  first_number = first_num_input.to_i # Convert to integer for math
+  first_number = first_num_input.to_f # Convert to integer for math
 else
   puts "That's not a valid number."
   exit # Stops the script if the input is bad
@@ -12,7 +12,7 @@ puts "Enter the second number:"
 second_num_input = gets.chomp
 
 if second_num_input.match?(/^\d+$/)
-  second_number = second_num_input.to_i
+  second_number = second_num_input.to_f
 else
   puts "That's not a valid number."
   exit
@@ -27,4 +27,27 @@ puts <<~MENU
   4. Division
 MENU
 
+# Get the user's choice and strip the newline character
 choice = gets.chomp
+
+case choice
+when "1"
+  puts "Result: #{first_number + second_number}"
+  # Your addition logic goes here!
+when "2"
+  puts "Result: #{first_number - second_number}"
+    # Your sub logic goes here!
+when "3"
+  puts "Result: #{first_number * second_number}"
+    # Your mult logic goes here!
+when "4"
+  if second_number == 0
+    puts "Error: Division by Zero"
+  else	
+    puts "Result: #{first_number / second_number}"
+  end
+else
+  puts "Invalid selection."
+end
+
+gets
