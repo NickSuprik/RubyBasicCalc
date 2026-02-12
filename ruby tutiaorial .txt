@@ -1,0 +1,8 @@
+
+# RNG in ruby
+
+puts rand      # 0 - 0.99
+puts rand*10   # 0 - 9.99 
+puts (rand*10).to_i  # whole numbers between 0 to 9
+
+https://www.youtube.com/watch?v=nPnTOshBo6U
